@@ -1,0 +1,11 @@
+pymongo
+minio
+kafka-python
+requests
+beautifulsoup4
+lxml
+rapidfuzz
+pandas
+matplotlib
+snakemake
+python-dotenv
