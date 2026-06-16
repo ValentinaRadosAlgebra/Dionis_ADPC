@@ -2,7 +2,7 @@ from pymongo import MongoClient
 from minio import Minio
 from code.config import *
 
-
+# mongo
 mongo_client = MongoClient(MONGO_URI)
 db = mongo_client[MONGO_DB]
 
@@ -25,7 +25,7 @@ def upsert(collection, query, data):
         upsert=True
     )
 
-
+#minio
 minio_client = Minio(
     MINIO_ENDPOINT,
     access_key=MINIO_ACCESS_KEY,

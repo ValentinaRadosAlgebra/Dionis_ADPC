@@ -1,6 +1,7 @@
 rule all:
     input:
-        "output/plots/birds.png"
+        "output/plots/birds.png",
+        "output/report.csv"
 
 
 rule upload:
@@ -51,18 +52,6 @@ rule report:
         "output/report.csv"
     shell:
         "python -m code.generate_report"
-
-
-# rule visualize:
-#     input:
-#         "output/fuzzy.done"
-#     output:
-#         "output/plots/birds.png"
-#     shell:
-#         """
-#         python -c "from pathlib import Path; Path('output/plots').mkdir(parents=True, exist_ok=True)"
-#         python -m code.visualize
-#         """
 
 
 rule visualize:
