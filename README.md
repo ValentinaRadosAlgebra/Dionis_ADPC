@@ -1,5 +1,8 @@
 # Dionis_ADPC
 
+*Before runing the project rename .env_example into .env and change the necesary values
+
+
 How to run the project:
 
 Setup of MongoDB and MiniO  
