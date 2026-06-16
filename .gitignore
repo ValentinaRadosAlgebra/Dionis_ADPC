@@ -1,0 +1,9 @@
+.snakemake/
+code/__pycache__/
+
+output/
+minio/
+mongo/
+temp/
+
+.env
