@@ -23,6 +23,8 @@ def run():
             if msg is None:
                 continue
 
+            print(msg.value)
+
             insert("observations", msg.value)
             count += 1
 

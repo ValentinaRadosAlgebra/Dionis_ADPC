@@ -20,7 +20,8 @@ rule scrape:
 
 rule classify:
     input:
-        "output/upload.done"
+        "output/upload.done",
+        "output/scrape.done"
     output:
         "output/classify.done"
     shell:

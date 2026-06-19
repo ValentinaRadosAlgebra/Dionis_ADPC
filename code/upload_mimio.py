@@ -3,7 +3,8 @@ from code.clients import init_bucket, upload_file, upsert
 from pathlib import Path
 
 AUDIO_DIR = "data/audio"
-
+LATITUDE = 45.8150
+LONGITUDE = 15.9819
 
 def run():
     init_bucket()
@@ -21,7 +22,9 @@ def run():
             "name": file,
             "object_name": file,
             "size": os.path.getsize(path),
-            "etag": getattr(result, "etag", None)
+            "etag": getattr(result, "etag", None),
+            "latitude": LATITUDE,
+            "longitude": LONGITUDE
         }
 
         upsert(
@@ -31,7 +34,7 @@ def run():
         )
 
     Path("output/upload.done").touch()
-    print("upload to mimio done")
+    #print("Inserted:", file)
 
 
 if __name__ == "__main__":

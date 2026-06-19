@@ -1,6 +1,7 @@
 from pymongo import MongoClient
 from minio import Minio
 from code.config import *
+from io import BytesIO
 
 # mongo
 mongo_client = MongoClient(MONGO_URI)
@@ -54,4 +55,16 @@ def download_file(object_name, destination):
         MINIO_BUCKET,
         object_name,
         destination
+    )
+
+def upload_json(content, object_name):
+
+    data = content.encode("utf-8")
+
+    minio_client.put_object(
+        MINIO_BUCKET,
+        object_name,
+        BytesIO(data),
+        len(data),
+        content_type="application/json"
     )
