@@ -39,8 +39,8 @@ def run():
         plt.close()
         return
 
-    labels = list(counts.keys())
-    values = list(counts.values())
+    labels = list(counts.keys()) #species name
+    values = list(counts.values()) #count
 
     plt.figure()
     plt.bar(labels, values)
@@ -49,7 +49,7 @@ def run():
     plt.tight_layout()
 
     out_file = output_dir / "birds.png"
-    plt.savefig(out_file, dpi=150, bbox_inches="tight")
+    plt.savefig(out_file, dpi=150, bbox_inches="tight") #save it the png
     plt.close()
 
     print("visualisation done", out_file)

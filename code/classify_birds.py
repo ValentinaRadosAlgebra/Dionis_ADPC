@@ -77,7 +77,7 @@ def run():
 
             species = extract_species(result)
 
-            taxonomy = find(
+            taxonomy = find( #find  in what we scraped the result
                 "taxonomy",
                 {"species": species}
             )
@@ -136,9 +136,7 @@ def run():
             if os.path.exists(local_path):
                 os.remove(local_path)
 
-    Path(
-        "output/classify.done"
-    ).touch()
+    Path("output/classify.done").touch()
 
     print("classification done")
 

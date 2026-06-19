@@ -2,12 +2,12 @@ import json
 from kafka import KafkaProducer
 from code.config import KAFKA_SERVER, KAFKA_TOPIC
 
-producer = KafkaProducer(
-    bootstrap_servers=KAFKA_SERVER,
-    value_serializer=lambda data: json.dumps(data).encode("utf-8"),
-    key_serializer=lambda k: str(k).encode("utf-8") if k else None,
+producer = KafkaProducer( #kafka connection
+    bootstrap_servers=KAFKA_SERVER, #localhost
+    value_serializer=lambda data: json.dumps(data).encode("utf-8"), #into bytes
+    key_serializer=lambda k: str(k).encode("utf-8") if k else None, #converts key to bytes
     acks="all",
-    retries=5
+    retries=5 #retry
 )
 
 def send_observation(data):

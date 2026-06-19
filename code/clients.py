@@ -40,14 +40,14 @@ def init_bucket():
         minio_client.make_bucket(MINIO_BUCKET)
 
 
-def upload_file(file_path, object_name):
+def upload_file(file_path, object_name): #upload audio
     result = minio_client.fput_object(
         MINIO_BUCKET,
         object_name,
         file_path
     )
 
-    return result
+    return result 
 
 
 def download_file(object_name, destination):

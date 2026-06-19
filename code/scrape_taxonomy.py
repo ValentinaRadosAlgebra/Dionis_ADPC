@@ -44,7 +44,7 @@ def run():
             doc
         )
 
-    Path("output/scrape.done").touch()
+    Path("output/scrape.done").touch() #output
     print(
         f"Scraping {len(birds)} taxonomy records."
     )
